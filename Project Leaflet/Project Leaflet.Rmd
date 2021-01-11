@@ -1,0 +1,60 @@
+
+
+
+---
+title: "Project_Leaflet"
+author: "Emilio Garcia"
+date: "1/2/2021"
+output: html_document
+---
+
+### Instructions
+
+1. Create a web page using R Markdown that features a map created with Leaflet. 
+
+2. Host your webpage on either GitHub Pages, RPubs, or NeoCities.
+
+3. Your webpage must contain the date that you created the document, and it must contain a map created with Leaflet. We would love to see you show off your creativity! 
+
+
+### Review Criteria
+
+1. Does the web page feature a date and is this date less than two months before the date that you're grading this assignment?
+
+2. Does the web page feature an interactive map that appears to have been created with Leaflet?
+
+  
+
+```{r setup, include=FALSE, echo=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r, echo=FALSE,message=FALSE}
+if (!"leaflet" %in% rownames(installed.packages())) install.packages("leaflet")
+library(leaflet)
+
+if (!"dplyr" %in% rownames(installed.packages())) install.packages("dplyr")
+library(dplyr)
+
+if (!"lubridate" %in% rownames(installed.packages())) install.packages("lubridate")
+library(lubridate)
+```
+
+
+```{r, eval=TRUE, echo=FALSE, comment=""}
+
+today()-days(60)
+
+
+
+
+```
+
+
+```{r, echo=FALSE}
+myTestMap <- leaflet() %>% addTiles() %>% 
+  addMarkers(lat=18.4800603,lng=-69.9427558, popup = "Home")
+myTestMap
+```
+
