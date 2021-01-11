@@ -44,7 +44,7 @@ library(lubridate)
 
 ```{r, eval=TRUE, echo=FALSE, comment=""}
 
-today()-days(60)
+today()
 
 
 
@@ -53,8 +53,8 @@ today()-days(60)
 
 
 ```{r, echo=FALSE}
-myTestMap <- leaflet() %>% addTiles() %>% 
+homeMap <- leaflet() %>% addTiles() %>% 
   addMarkers(lat=18.4800603,lng=-69.9427558, popup = "Home")
-myTestMap
+homeMap
 ```
 
